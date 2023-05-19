@@ -1,1 +1,1 @@
-web: gunicorn eventif:eventif
+web: gunicorn eventif.wsgi --log-file -
