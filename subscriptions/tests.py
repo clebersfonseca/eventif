@@ -34,7 +34,6 @@ class SubscribeTest(TestCase):
     def test_form_has_fields(self):
         form = self.response.context['form']
         self.assertSequenceEqual(['name', 'cpf', 'email', 'phone'], list(form.fields)) 
-
 class SubscribeTestPost(TestCase):
     def setUp(self):
         data = dict(name="Cleber Fonseca", 
@@ -71,3 +70,30 @@ class SubscribeTestPost(TestCase):
         self.assertIn('12345678901', email.body)
         self.assertIn('profcleberfonseca@gmail.com', email.body)
         self.assertIn('53-91234-5678', email.body)
+
+class SubscribeInvalidPost(TestCase):
+    def setUp(self):
+        self.response = self.client.post('/inscricao/', {})
+
+    def test_post(self):
+        self.assertEqual(200, self.response.status_code)
+
+    def test_template(self):
+        self.assertTemplateUsed(self.response, 'subscriptions/subscription_form.html')
+
+    def test_has_form(self):
+        form = self.response.context['form']
+        self.assertIsInstance(form, SubscriptionForm)
+
+    def test_form_has_error(self):
+        form = self.response.context['form']
+        self.assertTrue(form.errors)
+
+class SubscribeSuccessMessage(TestCase):
+    def test_message(self):
+        data = dict(name = 'Cleber Fonseca',
+                    cpf = '12345678901',
+                    email = 'profcleberfonseca@gmail.com',
+                    phone = '53-1234-5678')
+        response = self.client.post('/inscricao/', data, follow=True)
+        self.assertContains(response, 'Inscrição realizada com sucesso!')
