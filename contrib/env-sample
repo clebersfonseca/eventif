@@ -1,0 +1,11 @@
+SECRET_KEY=THIS_IS_NOT_A_GOOD_SECRET_KEY
+DEBUG=False
+ALLOWED_HOSTS=127.0.0.1, .localhost, .pythonanywhere.com
+DEFAULT_FROM_EMAIL=preencherComEmailDeEnvio@teste.com
+
+EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
+EMAIL_HOST=localhost
+EMAIL_PORT=25
+EMAIL_USE_TLS=False
+EMAIL_HOST_USER=
+EMAIL_HOST_PASSWORD=

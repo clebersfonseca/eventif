@@ -1,8 +1,26 @@
+{% extends 'base.html'%}
+
+{% block title %}403. Proibido{% endblock title %}
+
+{% block content %}
+<section>
+    <div class="content row padding-bottom-3 desktop-12 container">
+
+        <h1>403</h1>
+        <h2>Proibido</h2>
+        <div class="desktop-6">
+            <p>Você não tem permissão para acessar este endereço.</p>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+
 {% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
-        <title>403. Proibido</title>
+        <title></title>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -46,16 +64,7 @@
 
 
         <!-- OVERVIEW -->
-        <section>
-        	<div class="content row padding-bottom-3 desktop-12 container">
-
-            	<h1>403</h1>
-                <h2>Proibido</h2>
-                <div class="desktop-6">
-                    <p>Você não tem permissão para acessar este endereço.</p>
-                </div>
-            </div>
-        </section>
+        
 
     </body>
 </html>
