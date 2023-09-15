@@ -1,6 +1,8 @@
-from django.test import TestCase
-from subscriptions.forms import SubscriptionForm
 from django.core import mail
+from django.test import TestCase
+
+from subscriptions.forms import SubscriptionForm
+
 
 class SubscribeGet(TestCase):
     def setUp(self):
