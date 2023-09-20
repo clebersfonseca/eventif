@@ -1,0 +1,14 @@
+Novo contato recebido de {{ name }}.
+
+Telefone: {{ phone }}
+Email: {{ email }}
+
+Mensagem:
+{{ message }}
+
+---------
+Em até 48 horas úteis alguem da nossa equipe responderá o seu contato.
+
+Atenciosamente,
+--
+Equipe Eventif
