@@ -4,3 +4,5 @@ db.sqlite3
 .env
 .python-version
 .DS_Store
+.eventif
+/staticfiles/
