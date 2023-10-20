@@ -15,6 +15,9 @@ class SubscriptionModelAdmin(admin.ModelAdmin):
     def subscribed_today(self, obj):
         return obj.created_at.date() == now().date()
 
+    subscribed_today.short_description = 'inscrito hoje?'
+    subscribed_today.boolean = True
+
     def mark_as_paid(self, request, queryset):
         count = queryset.update(paid=True)
 
@@ -26,9 +29,6 @@ class SubscriptionModelAdmin(admin.ModelAdmin):
         self.message_user(request, msg.format(count))
 
     mark_as_paid.short_description = 'Marcar como pago'
-
-    subscribed_today.short_description = 'inscrito hoje?'
-    subscribed_today.boolean = True
 
 
 admin.site.register(Subscription, SubscriptionModelAdmin)
