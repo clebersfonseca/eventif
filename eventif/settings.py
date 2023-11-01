@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 from decouple import config, Csv
 from dj_database_url import parse as dburl
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -86,7 +87,9 @@ WSGI_APPLICATION = 'eventif.wsgi.application'
 default_dburl = "sqlite:///" + str(BASE_DIR / 'db.sqlite3')
 
 DATABASES = {
-    "default": config('DATABASE_URL', default=default_dburl, cast=dburl)
+    "default": dj_database_url.config(default=config('DATABASE_URL', default=default_dburl), test_options={'NAME': 'teste.sqlite3'})
+    # dj_database_url.config(default=config('DATABASE_URL', default=default_dburl, cast=dburl), test_options={'NAME': 'cleber.sqlite3'})
+    # "default": config('DATABASE_URL', default=default_dburl, cast=dburl),
 }
 
 
