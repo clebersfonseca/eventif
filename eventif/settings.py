@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'eventif.wsgi.application'
 default_dburl = "sqlite:///" + str(BASE_DIR / 'db.sqlite3')
 
 DATABASES = {
-    "default": dj_database_url.config(default=config('DATABASE_URL', default=default_dburl), test_options={'NAME': 'teste.sqlite3'})
+    "default": dj_database_url.config(default=config('DATABASE_URL', default=default_dburl), test_options={'NAME': config('DATABASE_TEST')})
     # dj_database_url.config(default=config('DATABASE_URL', default=default_dburl, cast=dburl), test_options={'NAME': 'cleber.sqlite3'})
     # "default": config('DATABASE_URL', default=default_dburl, cast=dburl),
 }
