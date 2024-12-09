@@ -1,0 +1,24 @@
+[
+{
+    "model": "core.speaker",
+    "pk": 1,
+    "fields": {
+        "name": "Grace Hopper",
+        "slug": "grace-hopper",
+        "photo": "https://abre.ai/hopper-pic",
+        "website": "https://abre.ai/hopper-site",
+        "description": "Programadora e almirante."
+    }
+},
+{
+    "model": "core.speaker",
+    "pk": 2,
+    "fields": {
+        "name": "Alan Turing",
+        "slug": "alan-turing",
+        "photo": "https://abre.ai/turing-pic",
+        "website": "https://abre.ai/turing-site",
+        "description": "Matemático e decifrador de códigos.\r\nInventou o computador moderno, formalizou matematicamente o que é um algoritmo e de quebra salvou o mundo ao acabar com a criptografia dos nazistas."
+    }
+}
+]

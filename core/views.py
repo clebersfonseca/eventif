@@ -4,10 +4,7 @@ from core.models import Speaker
 
 
 def home(request):
-    speakers = [
-        {'name': 'Grace Hopper', 'photo': 'https://abre.ai/hopper-pic'},
-        {'name': 'Alan Turing', 'photo': 'https://abre.ai/turing-pic'}
-    ]
+    speakers = Speaker.objects.all()
     return render(request, 'index.html', {'speakers': speakers})
 
 
